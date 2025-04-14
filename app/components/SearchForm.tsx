@@ -2,12 +2,12 @@ import React from 'react'
 import Form from 'next/form'
 import SearchFormReset from './SearchFormReset'
 
-const SearchForm = () => {
-    const query = 'Test'
+const SearchForm = ({query}: {query?: string}) => {
+
     
   return (
     <Form action='/' scroll={false}>
-        <input name='query' defaultValue="" className='search-input' placeholder='Search startups'></input>
+        <input name='query' defaultValue={query} className='search-input' placeholder='Search startups'></input>
         <div className='flex gap-2'>
             {query && (
                 <SearchFormReset />
